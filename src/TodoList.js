@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function TodoList(){
+export default function TodoList(props){
     return (
-  null
+  <div>{props.todos.length}</div>
     );
 }

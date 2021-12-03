@@ -3,7 +3,7 @@ import TodoList from './TodoList.js'
 
 function App() {
 
-  const [todo , setTodo] = useState(['todo 1' , 'todo 2']);
+  const [todo , setTodo] = useState([{ id:1 , name:"todo 1" , done:false}]);
 
 
 

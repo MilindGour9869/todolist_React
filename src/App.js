@@ -8,8 +8,7 @@ function App() {
   const [id , setId] = useState(0);
   console.log(typeof useState());
   const key = 'storage';
-  const key2=0;
-  let n=0;
+
 
 
 
@@ -26,18 +25,7 @@ function App() {
 
   } , [todo]);
 
-  useEffect(()=>{
-    const strg=JSON.parse(localStorage.getItem(key2));
-    if(strg)
-     {setId(strg);}
-  } , []);
  
- 
-   useEffect(()=>{
-     localStorage.setItem(key2 , JSON.stringify(n))
- 
-   } , [n]);
-
   
 
 

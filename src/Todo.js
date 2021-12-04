@@ -11,7 +11,7 @@ export default function Todo(props)
             <label>
            <input type="checkbox" checked = {props.checked} onChange = {handle}/>
             {props.todo}
-            {props.no}
+            {props.id}
             </label>
         </div>
     );

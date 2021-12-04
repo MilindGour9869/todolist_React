@@ -8,6 +8,10 @@ function App() {
   const [id , setId] = useState(0);
   console.log(typeof useState());
   const key = 'storage';
+  const key2=0;
+  let n=0;
+
+
 
 
  useEffect(()=>{
@@ -22,8 +26,34 @@ function App() {
 
   } , [todo]);
 
+  useEffect(()=>{
+    const strg=JSON.parse(localStorage.getItem(key2));
+    if(strg)
+     {setId(strg);}
+  } , []);
+ 
+ 
+   useEffect(()=>{
+     localStorage.setItem(key2 , JSON.stringify(n))
+ 
+   } , [n]);
+
+  
+
+
   
   const txt = useRef();
+
+  function checked(id)
+  {
+    const newtodo=[...todo];
+    const todoo = newtodo.find(todo => todo.id===id);
+    console.log(todoo)
+    todoo.done=!todoo.done;
+    setTodo(newtodo);
+
+
+  }
 
   function handleTodo(){
 
@@ -32,19 +62,21 @@ function App() {
   setId(n => {
 
     return  ++n;
-  })
+  });
+
+
   setTodo(arr => {
     return [ ...arr , {id:id , name : name , done:false}]
   });
   txt.current.value = null;
+}
 
-
- 
-
-    
-
- 
-   }
+function Clear()
+{
+  let newtodo = [...todo];
+  newtodo=[];
+  setTodo(newtodo);
+}
 
 
 
@@ -52,12 +84,12 @@ function App() {
 
   return (
   <>
-   <TodoList  todos = {todo}/>
+   <TodoList  todos = {todo}  checked = {checked}/>
    
    <input ref={txt} type="text"></input>
    
    <button onClick={handleTodo}>Add todo</button>
-   <button>Clear</button>
+   <button onClick={Clear}>Clear</button>
    <div>0 todo left</div>
   </>
   );

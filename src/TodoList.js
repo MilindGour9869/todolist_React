@@ -5,7 +5,8 @@ export default function TodoList(props){
     return (
         props.todos.map(
             val =>{
-                return <Todo key={val.id} todo = {val.name}/> 
+                console.log(val.id)
+                return <Todo id ={val.id} todo = {val.name} checked = {val.done}  click={props.checked}/> 
             }
         )
   

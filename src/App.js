@@ -5,8 +5,9 @@ import TodoList from './TodoList.js'
 function App() {
 
   const [todo , setTodo] = useState([]);
-  const [id , setId] = useState(0);
-  console.log(typeof useState());
+  const [id , setId] = useState(todo.length);
+  
+ // console.log(typeof useState());
   const key = 'storage';
 
 
@@ -22,14 +23,9 @@ function App() {
 
   useEffect(()=>{
     localStorage.setItem(key , JSON.stringify(todo))
-
+    setId(todo.length);
   } , [todo]);
 
- 
-  
-
-
-  
   const txt = useRef();
 
   function checked(id)
@@ -48,6 +44,11 @@ function App() {
   const name = txt.current.value;
   
   setId(n => {
+    console.log(todo.length);
+   
+    console.log(n);
+    n=todo.length;
+    console.log(n);
 
     return  ++n;
   });
@@ -78,7 +79,7 @@ function Clear()
    
    <button onClick={handleTodo}>Add todo</button>
    <button onClick={Clear}>Clear</button>
-   <div>0 todo left</div>
+   <div>{todo.filter(todo => !todo.done).length} todo left</div>
   </>
   );
 }

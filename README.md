@@ -24,10 +24,3 @@ To save the input in state variable
 
 To update the values when page reloads !!!
 
-## What is Going on :
-
-1. In `Index.js` We renders the First component : `App`
-2. In `App.js` : 
-      
-      
-      ... will do it later   

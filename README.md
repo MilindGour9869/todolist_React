@@ -1,5 +1,3 @@
-currently : Readme : Unfinished , Project : Completed
-
 # TodoApp 
 
 My First Project in React !!

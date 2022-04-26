@@ -20,5 +20,5 @@ To save the input in state variable
 
 ### useEffect :
 
-To update the values when page reloads !!!
+To update the values when page reloads !!!!!
 
